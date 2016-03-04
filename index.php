@@ -21,4 +21,9 @@ $klein->respond('GET', '/questions', function ($request, $response, $service, $a
     return json_encode($app->db->query($sql)->fetchAll(PDO::FETCH_ASSOC));
 });
 
+$klein->respond('GET', '/categories', function ($request, $response, $service, $app) {
+    $sql = 'SELECT * FROM category';
+    return json_encode($app->db->query($sql)->fetchAll(PDO::FETCH_ASSOC));
+});
+
 $klein->dispatch();
