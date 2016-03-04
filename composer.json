@@ -1,0 +1,13 @@
+{
+    "name": "pascalhelbig/php-quiz",
+    "require": {
+        "klein/klein": "^2.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pascal Helbig",
+            "email": "pascalhelbig@gmail.com"
+        }
+    ]
+}
