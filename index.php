@@ -2,7 +2,13 @@
 // Return jsons:
 header('Content-Type: application/json');
 
-$pdo = new PDO('pgsql:host=lamp.wlan.hwr-berlin.de;port=5432;dbname=csdb3;user=csdb3;password=csdb3');
+$_HOST = 'lamp.wlan.hwr-berlin.de';
+$_PORT = 5432;
+$_DB = 'csdb3';
+$_USER = 'csdb3';
+$_PASSWORD = 'csdb3';
+
+$pdo = new PDO('pgsql:host='.$_HOST.';port='.$_PORT.';dbname='.$_DB.';user='.$_USER.';password='.$_PASSWORD);
 
 if (isset($_GET['questions'])) {
     $sql = 'SELECT * FROM quiz';
