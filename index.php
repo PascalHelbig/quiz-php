@@ -28,4 +28,15 @@ if (isset($_GET['highscore'])) {
     return;
 }
 
+if (isset($_POST['name']) && isset($_POST['score'])) {
+    $name = $_POST['name'];
+    $score = $_POST['score'];
+
+    $stmt = $pdo->prepare('INSERT INTO highscore (name, score) VALUES (:name, :score)');
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':score', $score);
+    echo $stmt->execute();
+    return;
+}
+
 echo 'Hello World!';
