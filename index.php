@@ -23,7 +23,7 @@ if (isset($_GET['categories'])) {
 }
 
 if (isset($_GET['highscore'])) {
-    $sql = 'SELECT * FROM highscore ORDER BY score DESC LIMIT 10';
+    $sql = 'SELECT * FROM highscore ORDER BY score DESC, timestamp ASC LIMIT 10';
     echo json_encode($pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC));
     return;
 }
